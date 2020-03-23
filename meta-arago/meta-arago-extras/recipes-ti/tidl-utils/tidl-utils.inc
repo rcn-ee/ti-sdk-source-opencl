@@ -1,6 +1,4 @@
 SRC_URI = "git://git.ti.com/tidl/tidl-utils.git;protocol=git;branch=master"
-SRCREV = "0c52c82a2aed1a27ca2a9b4b11effb426842b6ab"
-
-PV = "01.01.01.00"
-PR = "r0"
-
+SRCREV = "c88b229e70db220ddbf394f3e77c3d5930a0e35a"
+PV = "01.01.02.00"
+PR = "r2"

@@ -24,10 +24,10 @@ protocol=${TI_IPC_METADATA_GIT_PROTOCOL};\
 branch=${TI_IPC_METADATA_GIT_BRANCH};\
 name=${TI_IPC_METADATA_NAME}"
 
-# Corresponds to tag: 3.50.03.05
-TI_IPC_METADATA_SRCREV = "3936c41d021c6d56c25f4bb07b647314a6589a57"
-# Corresponds to tag: 3.50.03.05
-TI_IPC_EXAMPLES_SRCREV = "55a8341c60a91c0ba2d79b7e4b805e2e39b3060f"
+# Corresponds to tag: 3.50.04.07
+TI_IPC_METADATA_SRCREV = "37e85ff1966f7d093fe2bde2dd9d4546f29d0d80"
+# Corresponds to tag: 3.50.04.07B
+TI_IPC_EXAMPLES_SRCREV = "ad3d694e30367a5c04525aef7c6ee9a33896fd59"
 
 SRCREV_FORMAT = "default"
 SRCREV_ipc-metadata = "${TI_IPC_METADATA_SRCREV}"
@@ -39,7 +39,7 @@ S_ipc-metadata = "${WORKDIR}/git/ipc-metadata"
 RELEASE_TYPE = "GA"
 RELEASE_SUFFIX = ""
 
-PR = "${INC_PR}.r0"
+PR = "${INC_PR}.r1"
 
 DEPENDS_append_keystone = " ti-cgt6x-native \
                             gcc-arm-none-eabi-native \
