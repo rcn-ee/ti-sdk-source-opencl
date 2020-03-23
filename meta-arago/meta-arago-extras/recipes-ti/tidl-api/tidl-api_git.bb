@@ -8,7 +8,7 @@ require recipes-ti/includes/ti-paths.inc
 
 PR = "${INC_PR}.0"
 
-COMPATIBLE_MACHINE = "am57xx-evm|am57xx-hs-evm"
+COMPATIBLE_MACHINE = "dra7xx-evm|am57xx-evm|am57xx-hs-evm"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit python3native
@@ -23,8 +23,6 @@ DEPENDS = "opencv \
 RDEPENDS_${PN} += "opencl-runtime \
                    opencv \
 "
-
-S = "${WORKDIR}/git"
 
 EXTRA_OEMAKE = " -C ${S}/tidl_api \
                  TARGET_ROOTDIR=${STAGING_DIR_HOST} \

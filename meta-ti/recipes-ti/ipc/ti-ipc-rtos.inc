@@ -29,6 +29,7 @@ TI_IPC_METADATA_SRCREV = "3936c41d021c6d56c25f4bb07b647314a6589a57"
 # Corresponds to tag: 3.50.03.05
 TI_IPC_EXAMPLES_SRCREV = "55a8341c60a91c0ba2d79b7e4b805e2e39b3060f"
 
+SRCREV_FORMAT = "default"
 SRCREV_ipc-metadata = "${TI_IPC_METADATA_SRCREV}"
 SRCREV_ipc-examples = "${TI_IPC_EXAMPLES_SRCREV}"
 
@@ -52,7 +53,7 @@ DEPENDS_append_omapl138 = " ti-cgt6x-native \
 DEPENDS_append_c66x = " ti-cgt6x-native \
 "
 
-DEPENDS_append_am65xx-evm = " ti-cgt-arm-native \
+DEPENDS_append_am65xx = " ti-cgt-arm-native \
                               gcc-linaro-baremetal-aarch64-native"
 
 IPC_TARGETS = ""
@@ -78,7 +79,7 @@ IPC_TARGETS_c66x = " \
     ti.targets.elf.C66_big_endian="${STAGING_DIR_NATIVE}/usr/share/ti/cgt-c6x" \
 "
 
-IPC_TARGETS_am65xx-evm = "\
+IPC_TARGETS_am65xx = "\
     gnu.targets.arm.A53F="${GCC_LINARO_BAREMETAL_AARCH64_TOOLCHAIN}" \
     ti.targets.arm.elf.R5F="${M4_TOOLCHAIN_INSTALL_DIR}" \
 "
@@ -91,5 +92,5 @@ EXTRA_OEMAKE = "\
     JOBS="--jobs=${BB_NUMBER_THREADS}" \
     JAVA_TOOL_OPTIONS=-Xss2560k \
 "
-EXTRA_OEMAKE_append_am65xx-evm = " PDK_INSTALL_DIR=${PDK_INSTALL_DIR}"
+EXTRA_OEMAKE_append_am65xx = " PDK_INSTALL_DIR=${PDK_INSTALL_DIR}"
 

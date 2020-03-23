@@ -8,7 +8,7 @@ require recipes-ti/includes/ti-paths.inc
 
 PR = "${INC_PR}.0"
 
-COMPATIBLE_MACHINE = "am57xx-evm|am57xx-hs-evm"
+COMPATIBLE_MACHINE = "dra7xx-evm|am57xx-evm|am57xx-hs-evm"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 DEPENDS = "opencv \
@@ -23,8 +23,6 @@ RDEPENDS_${PN} += "tidl-api \
                    opencv \
                    json-c \
 "
-
-S = "${WORKDIR}/git"
 
 EXTRA_OEMAKE = " -C ${S}/examples \
                  TARGET_ROOTDIR=${STAGING_DIR_HOST} \

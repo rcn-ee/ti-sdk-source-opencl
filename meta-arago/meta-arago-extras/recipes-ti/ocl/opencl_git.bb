@@ -3,8 +3,9 @@ HOMEPAGE = "https://downloads.ti.com/mctools/esd/docs/opencl/index.html"
 LICENSE = "BSD"
 
 include ocl.inc
+SRC_URI += "file://0001-OpenCL_K2x_compile.patch;patchdir=${WORKDIR}/git"
 
-PR = "${INC_PR}.0"
+PR = "${INC_PR}.1"
 
 inherit cmake systemd
 
@@ -38,6 +39,7 @@ DEPENDS_remove_k2g = " libulm"
 MONITORS                      = " opencl-monitor"
 MONITORS_append_am57xx-evm    = " opencl-monitor-ipu"
 MONITORS_append_am57xx-hs-evm = " opencl-monitor-ipu"
+MONITORS_append_dra7xx        = " opencl-monitor-ipu"
 
 RDEPENDS_${PN} += " bash"
 RDEPENDS_${PN}-dev += " ocl-gl-headers-dev opencl-monitor"
@@ -72,7 +74,7 @@ do_install_append() {
 }
 
 SYSTEMD_SERVICE_${PN} = "ti-mct-daemon.service"
-SYSTEMD_AUTO_ENABLE_${PN} = "${@base_conditional("RESERVE_CMEM", "1", "enable", "disable", d)}"
+SYSTEMD_AUTO_ENABLE_${PN} = "${@oe.utils.conditional("RESERVE_CMEM", "1", "enable", "disable", d)}"
 
 FILES_${PN}-runtime += "${bindir}"
 
